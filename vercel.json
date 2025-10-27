@@ -2,14 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/spam.py",
+      "src": "api/*.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/spam.py"
-    }
+    { "src": "/api/(.*)", "dest": "/api/$1.py" }
   ]
 }
